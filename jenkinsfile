@@ -1,0 +1,22 @@
+    agent { label 'linux-node'}
+    stages {
+        stage('Build') { 
+            steps {
+               sh 'mvn build'
+                echo 'from build stage'
+            }
+        }
+        stage('Test') { 
+            steps {
+               sh 'mvn test'
+                echo 'from build stage'
+            }
+        }
+        stage('Deploy') { 
+            steps {
+               sh 'mvn depoly'
+                echo 'from build stage'
+            }
+        }
+    }
+}
